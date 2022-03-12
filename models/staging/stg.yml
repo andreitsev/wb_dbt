@@ -4,14 +4,52 @@ models:
   - name: stg_daily_sales
     +materialized: table
     description: Daily sales
-    # columns: 
-    #   - name: customer_id
-    #     description: Primary key for stg_customers table
-    #     tests:
-    #       - unique
-    #       - not_null
+    columns: 
+      - name: barcode
+        description: barcode
+        tests:
+          - not_null
+      - name: supplierarticle
+        description: Name of the product
+        tests:
+          - not_null
+      - name: techsize
+        description: Size of the product (example S, M, L, XL, ...)
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - 0
+                - S
+                - M
+                - L
+                - XS
+                - XL
           
-  # - name: stg_orders
+  - name: stg_daily_purchases
+    +materialized: table
+    description: Daily purchases
+    columns: 
+      - name: barcode
+        description: barcode
+        tests:
+          - not_null
+      - name: supplierarticle
+        description: Name of the product
+        tests:
+          - not_null
+      - name: techsize
+        description: Size of the product (example S, M, L, XL, ...)
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - 0
+                - S
+                - M
+                - L
+                - XS
+                - XL
   #   columns: 
   #     - name: order_id
   #       tests:

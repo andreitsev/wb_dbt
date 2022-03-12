@@ -13,6 +13,7 @@ select
     , brand
     , cast(date as date) as day
 
+
     , sum(case when quantity > 0 then quantity else 0 end) as total_q_purchases
     , case
         when sum(case when quantity > 0 then 1 else 0 end) > 0 then 
