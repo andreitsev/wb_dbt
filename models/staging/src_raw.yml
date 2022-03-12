@@ -1,0 +1,40 @@
+version: 2
+
+sources:
+  - name: raw
+    database: wb_db
+    schema: raw
+    tables:
+      - name: raw_sales
+        description: Raw sales table
+        columns:
+          - name: barcode
+            description: One of the primary keys
+            tests:
+              - not_null
+      - name: raw_purchases 
+        description: Raw purchases table
+        columns:
+          - name: barcode
+            description: One of the primary keys
+            tests:
+              - not_null
+      - name: raw_storage 
+        description: Raw storage table
+        columns:
+          - name: barcode
+            description: One of the primary keys
+            tests:
+              - not_null
+
+      - name: raw_supplies 
+        description: Raw supplies table
+        columns:
+          - name: barcode
+            description: One of the primary keys
+            tests:
+              - not_null
+
+
+
+          
